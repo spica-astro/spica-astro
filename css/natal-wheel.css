@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Spica Astro - Стилизация на Интерактивното Натално Колело
+   ========================================================================== */
+
+.natal-chart-svg {
+  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.7));
+  user-select: none;
+  transition: transform 0.3s ease;
+}
+
+/* Зодиакални сегменти */
+.zodiac-segment {
+  transition: fill 0.25s ease, stroke 0.25s ease;
+  cursor: pointer;
+}
+
+.zodiac-segment:hover {
+  fill: rgba(245, 158, 11, 0.25) !important;
+  stroke: #F59E0B !important;
+}
+
+.zodiac-symbol {
+  pointer-events: none;
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+
+/* Планетни маркери */
+.planet-marker {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.planet-marker:hover {
+  transform: scale(1.22);
+}
+
+.planet-marker:hover .planet-circle {
+  stroke-width: 2.5px;
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+.planet-marker:hover .planet-glyph {
+  filter: drop-shadow(0 0 6px #FFF);
+}
+
+/* Аспектни линии */
+.aspect-line {
+  transition: stroke-width 0.2s ease, stroke-opacity 0.2s ease, filter 0.2s ease;
+  cursor: pointer;
+}
+
+.aspect-line:hover {
+  stroke-width: 3.5px !important;
+  stroke-opacity: 1 !important;
+  filter: drop-shadow(0 0 6px currentColor);
+}
+
+.highlighted-aspect {
+  stroke-width: 3px !important;
+  stroke-opacity: 1 !important;
+  filter: drop-shadow(0 0 8px currentColor);
+  animation: pulseAspect 1.8s infinite alternate;
+}
+
+@keyframes pulseAspect {
+  0% { stroke-opacity: 0.8; stroke-width: 2.5px; }
+  100% { stroke-opacity: 1; stroke-width: 4px; }
+}
+
+/* Осите ASC / MC */
+.axes-labels circle {
+  transition: transform 0.2s ease, fill 0.2s ease;
+}
+
+.axes-labels text {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.5px;
+}
+
+/* Аспектни цветове */
+.aspect-type-conjunction { stroke: #F59E0B; }
+.aspect-type-sextile { stroke: #10B981; }
+.aspect-type-square { stroke: #EF4444; }
+.aspect-type-trine { stroke: #3B82F6; }
+.aspect-type-opposition { stroke: #EC4899; }
+.aspect-type-quincunx { stroke: #8B5CF6; }
+
+/* Домови номера */
+.house-number {
+  pointer-events: none;
+  opacity: 0.8;
+}
